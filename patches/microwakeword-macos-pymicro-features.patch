@@ -1,0 +1,30 @@
+diff --git a/microwakeword/audio/audio_utils.py b/microwakeword/audio/audio_utils.py
+index 303116a..a419577 100644
+--- a/microwakeword/audio/audio_utils.py
++++ b/microwakeword/audio/audio_utils.py
+@@ -25,6 +25,16 @@ from scipy.io import wavfile
+ from pymicro_features import MicroFrontend
+ 
+ 
++class _MicroFrontendCompat:
++    """Wraps the macOS pymicro-features fork, which exposes CamelCase methods."""
++
++    def __init__(self):
++        self._frontend = MicroFrontend()
++
++    def process_samples(self, samples):
++        return self._frontend.ProcessSamples(samples)
++
++
+ def generate_features_for_clip(
+     audio_samples: np.ndarray, step_ms: int = 20, use_c: bool = True
+ ):
+@@ -49,7 +59,7 @@ def generate_features_for_clip(
+ 
+     if use_c:
+         audio_samples = audio_samples.tobytes()
+-        micro_frontend = MicroFrontend()
++        micro_frontend = _MicroFrontendCompat()
+         features = []
+         audio_idx = 0
+         num_audio_bytes = len(audio_samples)

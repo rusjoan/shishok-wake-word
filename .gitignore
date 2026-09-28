@@ -1,0 +1,39 @@
+# окружение
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# клонируемые репозитории
+microWakeWord/
+piper-sample-generator/
+
+# голоса и скачанные данные
+voices/
+negative_datasets/
+mit_rirs/
+esc50_tmp/
+esc50_16k/
+fma_tmp/
+fma_16k/
+cv_ru/
+cv_ru_wav/
+
+# сгенерированные сэмплы и фичи
+positives_raw/
+adversarial_raw/
+adversarial_raw2/
+generated_augmented_features/
+cv_ru_speech/
+adversarial_features/
+trained_models/
+
+# логи и временные файлы
+logs_*.txt
+*.zip
+test_out/
+test_say.wav
+session.wav
+output.wav
+example_augmented_positive_*.wav
+augmented_clip.wav
