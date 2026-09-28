@@ -7,8 +7,8 @@ ESP32 (компонент [`micro_wake_word`](https://esphome.io/components/micr
 
 | Файл | Что это |
 |---|---|
-| `shishok.tflite` | квантизованная streaming-модель, 62 КБ |
-| `shishok.json` | манифест для ESPHome (cutoff 0.94, окно 5) |
+| `model/shishok.tflite` | квантизованная streaming-модель, 62 КБ |
+| `model/shishok.json` | манифест для ESPHome (cutoff 0.94, окно 5) |
 | `docs/manual-guide.md` | пошаговый мануал: как повторить всё обучение руками |
 | `scripts/` | весь пайплайн: генерация данных, обучение-тесты, live-детекция на маке |
 
